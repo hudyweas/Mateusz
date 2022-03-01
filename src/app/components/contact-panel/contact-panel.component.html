@@ -1,0 +1,52 @@
+<div class="container">
+  <form [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)">
+    <app-h3 class="header" [class]="'left notresponsive-70'">
+      Masz do mnie pytania?
+    </app-h3>
+
+    <div class="topic">
+      <input
+        type="text"
+        class="input input1"
+        placeholder="Temat"
+        formControlName="topic"
+      />
+      <input
+        type="email"
+        class="input"
+        placeholder="Adres e-mail"
+        formControlName="email"
+      />
+    </div>
+    <textarea
+      class="input-text"
+      cols="30"
+      rows="3"
+      placeholder="Wpisz wiadomość"
+      formControlName="text"
+    ></textarea>
+
+    <div class="wrapper">
+      <input
+        type="checkbox"
+        class="checkbox"
+        id="checkbox"
+        formControlName="checked"
+      />
+      <label class="checkbox-label" for="checkbox"></label>
+      <div class="checkbox-text">
+        Wyrażam zgodę na przetwarzanie moich danych osobowych przez
+        administratora danych <br />
+        IFilmYou oraz akceptuję ogólne warunki użytkowania i politykę
+        prywatności.
+      </div>
+    </div>
+
+    <input
+      class="button"
+      type="submit"
+      [disabled]="!FormData.valid"
+      value="Wyślij wiadomość"
+    />
+  </form>
+</div>

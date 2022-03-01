@@ -1,0 +1,17 @@
+.photo {
+  width: 240px;
+}
+
+.contact {
+  width: 783px;
+}
+
+@media (min-width: 1920px) {
+  .photo {
+    width: calc(240 / 1920 * 100vw);
+  }
+
+  .contact {
+    width: calc(783 / 1920 * 100vw);
+  }
+}

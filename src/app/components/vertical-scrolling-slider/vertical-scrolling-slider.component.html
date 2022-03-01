@@ -1,0 +1,30 @@
+<app-p [class]="'center responsive-20'">Ostatnie reportaże ślubne</app-p>
+<app-h1>Historie miłosne,</app-h1>
+<app-h1>które miałem zaszczyt uchwycić</app-h1>
+<div class="window">
+  <div class="container" #container id="slider">
+    <div
+      *ngFor="let s of sliderData; let i = index"
+      class="slider-item item{{ i + 1 }}"
+    >
+      <div class="overlay">
+        <div class="sub">
+          <div class="names">{{ s.before.header }}</div>
+          <div class="date">{{ s.before.content }}</div>
+        </div>
+        <div class="main">
+          <div class="names">{{ s.header }}</div>
+          <div class="date">{{ s.content }}</div>
+        </div>
+        <div class="sub">
+          <div class="names">{{ s.after.header }}</div>
+          <div class="date">{{ s.after.content }}</div>
+        </div>
+      </div>
+
+      <video class="film" controls muted>
+        <source [src]="'/assets/' + s.video" />
+      </video>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,5 @@
+<div class="list">
+  <app-link *ngFor="let l of linkList" [url]="'/' + [l.url]" [class]="l.class">
+    {{ l.urlName }}
+  </app-link>
+</div>

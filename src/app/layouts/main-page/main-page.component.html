@@ -1,0 +1,37 @@
+<div class="background"></div>
+
+<div class="container">
+  <app-header class="header"></app-header>
+
+  <div class="firstViewBox">
+    <div class="firstViewBox-text">
+      Wasze wspomnienia,<br />
+      w moim kadrze.
+    </div>
+    <div class="linkBox">
+      <app-link-list [links]="'fistViewTextRouter'"></app-link-list>
+    </div>
+  </div>
+
+  <div id="opinie" class="margin">
+    <app-memories></app-memories>
+  </div>
+
+  <div class="margin">
+    <app-pillars></app-pillars>
+  </div>
+
+  <div id="podziekowania" class="margin">
+    <app-vertical-scrolling-slider></app-vertical-scrolling-slider>
+  </div>
+
+  <div id="o-mnie" class="margin">
+    <app-about-me></app-about-me>
+  </div>
+
+  <div id="kontakt" class="margin">
+    <app-contact></app-contact>
+  </div>
+
+  <app-footer></app-footer>
+</div>

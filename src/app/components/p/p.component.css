@@ -1,0 +1,22 @@
+.style {
+  font: normal normal 300 2em Lato-light;
+  letter-spacing: 0px;
+  color: #ffffff;
+  opacity: 1;
+}
+
+.darkGrey {
+  color: #272727;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.center {
+  text-align: center;
+}
+
+.half-opacity {
+  opacity: 0.5;
+}

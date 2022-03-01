@@ -1,0 +1,47 @@
+.li {
+  text-align: left;
+  font: normal normal 300 16px/26px Lato-light;
+  color: #ffffff;
+  margin-left: 13px;
+}
+
+.li::before {
+  content: "✓ ";
+  font-weight: bold;
+  margin-left: -13px;
+}
+
+.normal-text {
+  opacity: 0.7;
+}
+
+.informacje {
+  font-family: Lato-light;
+  font-size: 14px;
+}
+
+.bold {
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.long {
+  width: fit-content;
+}
+
+@media (min-width: 1920px) {
+  .li {
+    font-size: calc(16 / 1920 * 100vw);
+    line-height: calc(26 / 1920 * 100vw);
+    margin-left: calc(13 / 1920 * 100vw);
+  }
+
+  .li::before {
+    margin-left: calc(-13 / 1920 * 100vw);
+  }
+
+  .informacje {
+    font-size: calc(14 / 1920 * 100vw);
+    line-height: calc(21 / 1920 * 100vw);
+  }
+}
