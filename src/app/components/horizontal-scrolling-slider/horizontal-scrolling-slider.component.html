@@ -1,23 +1,18 @@
 <div class="container" #container>
-  <div
-    *ngFor="let s of [1, 2, 3, 4, 5]; let i = index"
-    class="slider-element"
-    [class]="'slider-element' + i"
-  >
-    <div class="item">
-      <div class="names">Karolina i Maciej</div>
-
-      <video class="film" controls muted>
-        <source src="/assets/test-movie.mp4" />
-      </video>
-    </div>
-
-    <div class="where">
-      <app-h3 [class]="'notresponsive-70'">Pałac Milusin</app-h3>
-    </div>
-
-    <app-p [class]="'center half-opacity'">MILUSIN, DZIAŁDOWO</app-p>
-
-    <div class="horizontal-line"></div>
+  <div class="previous" #previous (click)="goPrevious($event)">
+    <div class="thumbnail"></div>
+  </div>
+  <div class="current" #current>
+    <iframe
+      class="movie"
+      [src]="getUrl(current)"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+  <div class="next" #next (click)="goNext($event)">
+    <div class="thumbnail"></div>
   </div>
 </div>

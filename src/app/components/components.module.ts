@@ -22,6 +22,7 @@ import { ListComponent } from './list/list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { VerticalScrollingSliderComponent } from './vertical-scrolling-slider/vertical-scrolling-slider.component';
 import { HorizontalScrollingSliderComponent } from './horizontal-scrolling-slider/horizontal-scrolling-slider.component';
+import { SafePipe } from '../app.component';
 
 const components = [
   HeaderComponent,
@@ -48,6 +49,7 @@ const components = [
 @NgModule({
   declarations: [components],
   imports: [CommonModule, RouterModule, BrowserModule, ReactiveFormsModule],
+  providers: [SafePipe],
   exports: [components],
 })
 export class ComponentsModule {}

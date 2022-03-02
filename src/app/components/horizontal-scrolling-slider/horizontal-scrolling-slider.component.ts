@@ -1,59 +1,48 @@
-import {
-  AfterViewInit,
-  Component,
-  HostListener,
-  ViewChild,
-} from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
+import { movieInterface, moviePage } from 'src/models/movies';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-horizontal-scrolling-slider',
   templateUrl: './horizontal-scrolling-slider.component.html',
   styleUrls: ['./horizontal-scrolling-slider.component.css'],
 })
-export class HorizontalScrollingSliderComponent implements AfterViewInit {
-  recentScroll = false;
-  noSliderElements: any;
-  main = 0;
+export class HorizontalScrollingSliderComponent {
+  sanitizer;
 
-  @ViewChild('container') container: any;
-  ngAfterViewInit(): void {
-    this.container = this.container.nativeElement;
-    this.noSliderElements = this.container.children.length;
+  videoData: movieInterface[];
+  currentVideoSrc: string;
+  index: number = 0;
+
+  @ViewChild('current') current: any;
+  @ViewChild('previous') previous: any;
+  @ViewChild('next') next: any;
+
+  constructor(sanitizer: DomSanitizer) {
+    this.sanitizer = sanitizer;
+    this.videoData = moviePage;
+    this.currentVideoSrc = this.videoData[0].src;
   }
 
-  @HostListener('wheel', ['$event'])
-  onScroll(event: any) {
-    this.disablePageScrolling(event);
-
-    if (!this.recentScroll) {
-      this.recentScroll = true;
-
-      if (event.deltaY > 0) {
-        if (this.main < this.noSliderElements - 1) {
-          this.main += 1;
-          this.container.scrollBy({
-            left: this.container.children[1].clientWidth + 100, //element width + margin
-            behavior: 'smooth',
-          });
-        }
-      } else {
-        if (this.main > 0) {
-          this.main -= 1;
-          this.container.scrollBy({
-            left: -(this.container.children[1].clientWidth + 100), //element width + margin
-            behavior: 'smooth',
-          });
-        }
-      }
-
-      setTimeout(() => {
-        this.recentScroll = false;
-      }, 1500);
+  goNext(event: any) {
+    if (this.index <= this.videoData.length) {
+      this.index += 1;
+      this.currentVideoSrc = this.videoData[this.index].src;
+    } else {
+      this.index = 0;
+      this.currentVideoSrc = this.videoData[this.index].src;
     }
   }
-
-  disablePageScrolling = (event: any) => {
-    event.preventDefault();
-    event.stopPropagation();
-  };
+  goPrevious(event: any) {
+    if (this.index > 0) {
+      this.index -= 1;
+      this.currentVideoSrc = this.videoData[this.index].src;
+    } else {
+      this.index = this.videoData.length - 1;
+      this.currentVideoSrc = this.videoData[this.index].src;
+    }
+  }
+  getUrl() {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(this.currentVideoSrc);
+  }
 }
