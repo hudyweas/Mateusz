@@ -1,18 +1,18 @@
 <div class="container" #container>
-  <div class="previous" #previous (click)="goPrevious($event)">
-    <div class="thumbnail"></div>
+  <div class="previous" #previous>
+    <div class="thumbnail" (click)="goPrevious($event)"></div>
   </div>
   <div class="current" #current>
     <iframe
       class="movie"
-      [src]="getUrl(current)"
+      [src]="getUrl()"
       title="YouTube video player"
       frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allow="autoplay"
       allowfullscreen
     ></iframe>
   </div>
-  <div class="next" #next (click)="goNext($event)">
-    <div class="thumbnail"></div>
+  <div class="next" #next>
+    <div class="thumbnail" (click)="goNext($event)"></div>
   </div>
 </div>

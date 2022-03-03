@@ -18,6 +18,8 @@ body {
   background-color: #272727;
   overflow: scroll;
   overflow-x: hidden;
+
+  font-size: max(calc(10 / 1920 * 100vw), 7px);
 }
 
 ::-webkit-scrollbar {

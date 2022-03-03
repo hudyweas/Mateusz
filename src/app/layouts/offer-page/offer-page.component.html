@@ -1,43 +1,45 @@
-<app-header class="menu"></app-header>
+<div class="wrapper">
+  <div class="background">Oferta</div>
 
-<div class="background">Oferta</div>
+  <app-header class="menu"></app-header>
 
-<div class="container container1">
-  <div
-    class="positioner positioner{{ i }} "
-    *ngFor="let offer of oferta; let i = index"
-  >
-    <div class="offer">
-      <div class="header">{{ offer.header }}</div>
-      <app-list [list]="offer.package"></app-list>
-      <div class="price">{{ offer.price }}</div>
+  <div class="container container1">
+    <div
+      class="positioner positioner{{ i }} "
+      *ngFor="let offer of oferta; let i = index"
+    >
+      <div class="offer">
+        <div class="header">{{ offer.header }}</div>
+        <app-list [list]="offer.package"></app-list>
+        <div class="price">{{ offer.price }}</div>
+      </div>
     </div>
   </div>
+
+  <div class="middle-line"></div>
+
+  <div class="container container2">
+    <div class="positioner">
+      <div class="option">
+        <div class="header-informations">{{ opcjeDodatkowe.header }}</div>
+        <app-list [list]="opcjeDodatkowe.package"></app-list>
+      </div>
+    </div>
+
+    <div>
+      <div class="button-positioner">
+        <a class="button" href="#">Zarezerwuj termin</a>
+        <div class="white-line-vertical"></div>
+      </div>
+    </div>
+
+    <div class="positioner">
+      <div class="option">
+        <div class="header-informations">{{ informacjeDodatkowe.header }}</div>
+        <app-list [list]="informacjeDodatkowe.package"></app-list>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
 </div>
-
-<div class="middle-line"></div>
-
-<div class="container container2">
-  <div class="positioner">
-    <div class="option">
-      <div class="header-informations">{{ opcjeDodatkowe.header }}</div>
-      <app-list [list]="opcjeDodatkowe.package"></app-list>
-    </div>
-  </div>
-
-  <div>
-    <div class="button-positioner">
-      <a class="button" href="#">Zarezerwuj termin</a>
-      <div class="white-line-vertical"></div>
-    </div>
-  </div>
-
-  <div class="positioner">
-    <div class="option">
-      <div class="header-informations">{{ informacjeDodatkowe.header }}</div>
-      <app-list [list]="informacjeDodatkowe.package"></app-list>
-    </div>
-  </div>
-</div>
-
-<app-footer></app-footer>

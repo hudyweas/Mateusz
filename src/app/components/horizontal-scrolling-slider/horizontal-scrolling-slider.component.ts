@@ -27,22 +27,31 @@ export class HorizontalScrollingSliderComponent {
   goNext(event: any) {
     if (this.index <= this.videoData.length) {
       this.index += 1;
-      this.currentVideoSrc = this.videoData[this.index].src;
+      this.changeSlide();
     } else {
       this.index = 0;
-      this.currentVideoSrc = this.videoData[this.index].src;
+      this.changeSlide();
     }
   }
   goPrevious(event: any) {
     if (this.index > 0) {
       this.index -= 1;
-      this.currentVideoSrc = this.videoData[this.index].src;
+      this.changeSlide();
     } else {
       this.index = this.videoData.length - 1;
-      this.currentVideoSrc = this.videoData[this.index].src;
+      this.changeSlide();
     }
   }
+
+  changeSlide() {
+    this.currentVideoSrc = this.videoData[this.index].src;
+  }
+
   getUrl() {
     return this.sanitizer.bypassSecurityTrustResourceUrl(this.currentVideoSrc);
+  }
+
+  onChange() {
+    console.log('change');
   }
 }

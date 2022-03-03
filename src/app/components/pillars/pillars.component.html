@@ -4,13 +4,16 @@
   </app-p>
   <app-h1 class="header">Lorem ipsum lorem</app-h1>
 
-  <div class="pillars">
-    <div
-      *ngFor="let p of pillarList; let i = index"
-      class="pillar"
-      style="background-image: url(/assets/pillar{{ i }}.png)"
-    >
-      <div class="text-container">
+  <div class="pillars-section">
+    <div class="pillars">
+      <div
+        *ngFor="let p of pillarList; let i = index"
+        class="pillar"
+        style="background-image: url(/assets/pillar{{ i }}.png)"
+      ></div>
+    </div>
+    <div class="text-container">
+      <div *ngFor="let p of pillarList; let i = index" class="text">
         <span class="number">{{ "0" + (i + 1) }}</span>
         <app-h2 [class]="'left darkGrey'">{{ p.header }}</app-h2>
         <app-p [class]="'darkGrey responsive-20'">{{ p.text }}</app-p>

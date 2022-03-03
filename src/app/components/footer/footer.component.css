@@ -1,50 +1,50 @@
 .container {
-  display: flex;
-  margin-bottom: calc(125 / 1920 * 100vw);
+  font-size: max(1em, 10px);
 }
 
-.container > * {
+.text-container {
+  display: flex;
+  margin-bottom: 13em;
+}
+
+.text-container > * {
   flex-grow: 1;
 }
 
 .logo,
-.container {
-  margin-left: calc(220 / 1920 * 100vw);
-  margin-right: calc(220 / 1920 * 100vw);
+.text-container {
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .logo {
-  width: calc(240 / 1920 * 100vw);
-  height: calc(100 / 1920 * 100vw);
-
-  margin-bottom: calc(38 / 1920 * 100vw);
+  margin-bottom: 4em;
 }
 
 .text-area {
-  width: calc(364 / 1920 * 100vw);
+  width: 36em;
 }
 
 .text {
-  font: normal normal normal calc(15 / 1920 * 100vw) / calc(18 / 1920 * 100vw)
-    Lato-light;
+  font-size: 1.5em;
+  font-family: Lato-light;
   letter-spacing: 0px;
   color: #ffffff;
   opacity: 1;
-
-  max-width: calc(364 / 1920 * 100vw);
+  max-width: 30em;
 }
 
 .link-header {
-  font: normal normal bold calc(20 / 1920 * 100vw) / calc(20 / 1920 * 100vw)
-    Hello Branch;
+  font-size: 2em;
+  font-family: Hello Branch;
   letter-spacing: 0px;
   color: #ffffff;
   opacity: 1;
 }
 
 .link {
-  font: normal normal normal calc(15 / 1920 * 100vw) / calc(20 / 1920 * 100vw)
-    Lato-light;
+  font-size: 1.5em;
+  font-family: Lato-light;
   letter-spacing: 0px;
   color: #ffffff;
   opacity: 1;
