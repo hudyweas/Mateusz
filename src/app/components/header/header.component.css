@@ -3,11 +3,11 @@
   width: 100%;
   top: 0;
 
-  background-color: rgba(0, 0, 0, 0.1);
-
   transition: 1s;
 
-  font-size: max(1em, 7px);
+  font-size: max(min(1em, 10px), 7px);
+
+  z-index: 100;
 }
 
 .hidden {
@@ -40,40 +40,4 @@
 
 nav {
   margin: 0 calc(10vw - 150px);
-}
-
-@media (min-width: 1920px) {
-  .logo {
-    margin: 0 6vw;
-  }
-
-  .list {
-    display: flex;
-    position: relative;
-    justify-content: space-around;
-    align-items: center;
-    padding: 0 calc(40 / 1920 * 100vw);
-
-    margin-top: calc(24 / 1920 * 100vw);
-  }
-
-  .list > * {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-  }
-
-  .logo {
-    flex: 2;
-    margin: 0 calc(17vw - 200px);
-
-    width: calc(240 / 1920 * 100vw);
-    height: calc(100 / 1920 * 100vw);
-  }
-
-  nav {
-    margin: 0 calc(10vw - 150px);
-  }
 }

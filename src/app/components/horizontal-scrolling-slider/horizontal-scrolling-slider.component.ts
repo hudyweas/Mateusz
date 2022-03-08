@@ -1,4 +1,13 @@
-import { Component, ViewChild } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Pipe,
+  PipeTransform,
+  QueryList,
+  ViewChild,
+  ViewChildren,
+} from '@angular/core';
 import { movieInterface, moviePage } from 'src/models/movies';
 import { DomSanitizer } from '@angular/platform-browser';
 
@@ -7,51 +16,37 @@ import { DomSanitizer } from '@angular/platform-browser';
   templateUrl: './horizontal-scrolling-slider.component.html',
   styleUrls: ['./horizontal-scrolling-slider.component.css'],
 })
-export class HorizontalScrollingSliderComponent {
+export class HorizontalScrollingSliderComponent implements AfterViewInit {
   sanitizer;
 
   videoData: movieInterface[];
-  currentVideoSrc: string;
-  index: number = 0;
+  index: number = 1;
 
-  @ViewChild('current') current: any;
-  @ViewChild('previous') previous: any;
-  @ViewChild('next') next: any;
+  noSliders: any;
+
+  @ViewChild('slider') slider: any;
 
   constructor(sanitizer: DomSanitizer) {
     this.sanitizer = sanitizer;
     this.videoData = moviePage;
-    this.currentVideoSrc = this.videoData[0].src;
+  }
+  ngAfterViewInit(): void {
+    this.noSliders = this.slider.nativeElement.children.length;
   }
 
-  goNext(event: any) {
-    if (this.index <= this.videoData.length) {
-      this.index += 1;
-      this.changeSlide();
-    } else {
-      this.index = 0;
-      this.changeSlide();
-    }
-  }
-  goPrevious(event: any) {
+  goPrevious() {
     if (this.index > 0) {
       this.index -= 1;
-      this.changeSlide();
     } else {
-      this.index = this.videoData.length - 1;
-      this.changeSlide();
+      this.index = this.noSliders - 1;
     }
   }
 
-  changeSlide() {
-    this.currentVideoSrc = this.videoData[this.index].src;
-  }
-
-  getUrl() {
-    return this.sanitizer.bypassSecurityTrustResourceUrl(this.currentVideoSrc);
-  }
-
-  onChange() {
-    console.log('change');
+  goNext() {
+    if (this.index < this.noSliders - 1) {
+      this.index += 1;
+    } else {
+      this.index = 0;
+    }
   }
 }

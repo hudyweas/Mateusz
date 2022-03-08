@@ -1,18 +1,36 @@
-<div class="container" #container>
-  <div class="previous" #previous>
-    <div class="thumbnail" (click)="goPrevious($event)"></div>
+<div class="container">
+  <div
+    class="slider"
+    #slider
+    [ngStyle]="{
+      'margin-left': 'calc((100vw - 92em) / 2 - 102em *' + index + ')'
+    }"
+  >
+    <div
+      *ngFor="let s of videoData; let i = index"
+      class="video-wrapper"
+      #element
+    >
+      <div class="video">
+        <iframe
+          class="movie"
+          [src]="s.src | safe"
+          title="YouTube video player"
+          frameborder="0"
+          allow="autoplay"
+          allowfullscreen
+        ></iframe>
+        <app-h1 class="names" [class]="'darkGrey'">{{ s.names }}</app-h1>
+      </div>
+      <app-h3 class="responsive-70">{{ s.where }}</app-h3>
+      <app-p class="uppercase half-opacity center responsive-16">{{
+        s.place
+      }}</app-p>
+      <div class="margin-bottom"></div>
+      <div class="white-line-vertical"></div>
+    </div>
   </div>
-  <div class="current" #current>
-    <iframe
-      class="movie"
-      [src]="getUrl()"
-      title="YouTube video player"
-      frameborder="0"
-      allow="autoplay"
-      allowfullscreen
-    ></iframe>
-  </div>
-  <div class="next" #next>
-    <div class="thumbnail" (click)="goNext($event)"></div>
-  </div>
+
+  <div class="previous" (click)="goPrevious()"></div>
+  <div class="next" (click)="goNext()"></div>
 </div>

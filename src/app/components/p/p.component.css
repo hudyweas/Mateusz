@@ -5,6 +5,10 @@
   opacity: 1;
 }
 
+.responsive-16 {
+  font-size: 1.6em;
+}
+
 .darkGrey {
   color: #272727;
 }
