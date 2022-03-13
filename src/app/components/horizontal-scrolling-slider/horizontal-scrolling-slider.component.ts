@@ -1,17 +1,5 @@
-// pominac
-
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  Pipe,
-  PipeTransform,
-  QueryList,
-  ViewChild,
-  ViewChildren,
-} from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
 import { movieInterface, moviePage } from 'src/models/movies';
-import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-horizontal-scrolling-slider',
