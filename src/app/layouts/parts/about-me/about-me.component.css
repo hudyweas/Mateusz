@@ -1,0 +1,29 @@
+.container {
+  width: 100%;
+  font-size: 1em;
+
+  display: flex;
+}
+
+.me__info {
+  width: 60%;
+}
+
+.info__container--header {
+  margin-bottom: 0.1em;
+}
+
+.info__container {
+  display: flex;
+  flex-direction: column;
+  padding: 10%;
+}
+
+.info__container--text {
+  margin-bottom: 6em;
+}
+
+.me__photo {
+  width: 40%;
+  content: url(/assets/contact.png);
+}

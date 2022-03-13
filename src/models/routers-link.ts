@@ -7,12 +7,10 @@ export interface routerDTO {
 export const fistViewTextRouter: routerDTO[] = [
   {
     urlName: 'filmy',
-    url: '#',
-    class: 'mainTextLinks mainTextLinksResponsive',
+    url: 'movies',
   },
   {
     urlName: 'kontakt',
-    url: '#',
-    class: 'mainTextLinks mainTextLinksResponsive',
+    url: '#contact',
   },
 ];

@@ -1,17 +1,15 @@
-<header class="header" [class.hidden]="hidden">
-  <nav class="list">
-    <app-link [url]="'/#o-mnie'" [class]="'header'">o mnie</app-link>
-    <app-link [url]="'/#opinie'" [class]="'header'">opinie</app-link>
-    <app-link [url]="'/oferta'" [class]="'header'">oferta</app-link>
+<header class="header" [class.header--hidden]="hidden">
+  <nav class="header__nav">
+    <app-link [url]="'/#about-me'" [class]="'header'">o mnie</app-link>
+    <app-link [url]="'/#opinions'" [class]="'header'">opinie</app-link>
+    <app-link [url]="'/offer'" [class]="'header'">oferta</app-link>
 
     <a href="/">
-      <app-img class="logo" [src]="'logo.png'" [class]="'header'"></app-img>
+      <app-img class="header__nav--logo" [src]="'logo.png'"></app-img>
     </a>
 
-    <app-link [url]="'/filmy'" [class]="'header'">filmy</app-link>
-    <app-link [url]="'/#podziekowania'" [class]="'header'"
-      >podziękowania</app-link
-    >
-    <app-link [url]="'/#kontakt'" [class]="'header'">kontakt</app-link>
+    <app-link [url]="'/movies'" [class]="'header'">filmy</app-link>
+    <app-link [url]="'#'" [class]="'header'">podziękowania</app-link>
+    <app-link [url]="'/#contact'" [class]="'header'">kontakt</app-link>
   </nav>
 </header>

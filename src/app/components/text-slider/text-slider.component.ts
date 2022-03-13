@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { textSlider } from 'src/models/sliders-data';
+import { sliderDTO, textSlider } from 'src/models/sliders-data';
 
 @Component({
   selector: 'app-text-slider',
@@ -7,7 +7,7 @@ import { textSlider } from 'src/models/sliders-data';
   styleUrls: ['./text-slider.component.css'],
 })
 export class TextSliderComponent {
-  sliderData;
+  public sliderData: sliderDTO[];
 
   constructor() {
     this.sliderData = textSlider;

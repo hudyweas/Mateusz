@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import {
   MailContactService,
   mailDTO,
@@ -10,15 +15,13 @@ import {
   templateUrl: './contact-panel.component.html',
   styleUrls: ['./contact-panel.component.css'],
 })
-export class ContactPanelComponent implements OnInit {
-  FormData: any;
+export class ContactPanelComponent {
+  public formData: FormGroup;
   constructor(
     private builder: FormBuilder,
     private mailSender: MailContactService
-  ) {}
-
-  ngOnInit(): void {
-    this.FormData = this.builder.group({
+  ) {
+    this.formData = this.builder.group({
       topic: new FormControl('', [Validators.required]),
       email: new FormControl('', [Validators.required, Validators.email]),
       text: new FormControl('', [Validators.required]),

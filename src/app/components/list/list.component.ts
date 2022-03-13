@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { packageDTO } from 'src/models/offerts';
 
 @Component({
   selector: 'app-list',
@@ -6,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./list.component.css'],
 })
 export class ListComponent {
-  @Input() list: any;
+  @Input() list?: packageDTO[];
 }

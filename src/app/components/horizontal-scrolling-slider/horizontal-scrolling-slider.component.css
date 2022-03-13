@@ -6,6 +6,10 @@
   position: relative;
 }
 
+.container:last-child {
+  margin: 0;
+}
+
 .slider {
   height: 100%;
 
@@ -14,25 +18,23 @@
   transition: 1s;
 }
 
-.video-wrapper {
+.slider__wrapper {
   min-width: 102em;
   padding-right: 10em;
 }
 
-.container:last-child {
-  margin: 0;
-}
-
 .movie,
-.video {
+.slider__video {
   width: 100%;
   height: 100%;
 }
 
-.video {
+.slider__video {
   position: relative;
 }
-.names {
+/* pominac */
+
+.slider__names {
   position: absolute;
   width: 100%;
   bottom: 0;
@@ -41,8 +43,20 @@
   pointer-events: none;
 }
 
-.previous,
-.next {
+.slider__positioner--space {
+  margin-bottom: 30px;
+}
+
+.slider__positioner--line {
+  height: 100px;
+  width: 1px;
+  background-color: white;
+  opacity: 0.5;
+  margin: 0 auto;
+}
+
+.slider__previous,
+.slider__next {
   position: absolute;
   z-index: 100;
   width: calc((100vw - 92em) / 2 - 100px);
@@ -50,24 +64,12 @@
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-.previous {
+.slider__previous {
   left: 0;
   top: 0;
 }
 
-.next {
+.slider__next {
   right: 0;
   top: 0;
-}
-
-.margin-bottom {
-  margin-bottom: 30px;
-}
-
-.white-line-vertical {
-  height: 100px;
-  width: 1px;
-  background-color: white;
-  opacity: 0.5;
-  margin: 0 auto;
 }

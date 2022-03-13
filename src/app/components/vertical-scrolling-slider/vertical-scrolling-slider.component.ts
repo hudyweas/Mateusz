@@ -15,11 +15,11 @@ export class VerticalScrollingSliderComponent implements AfterViewInit {
   sliderData = verticalMovieSlider;
 
   @ViewChild('container') container: any;
-  cont: any;
+  cont?: any;
   recentScroll = false;
   main = 0;
-  noSliderElements: any;
-  event: any;
+  noSliderElements: number = 0;
+  event?: any;
   isScrolling = false;
 
   ngAfterViewInit(): void {

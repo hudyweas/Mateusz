@@ -5,16 +5,18 @@
 
   transition: 1s;
 
-  font-size: max(min(1em, 10px), 7px);
+  font-size: 1em;
 
   z-index: 100;
+
+  margin-top: 35px;
 }
 
-.hidden {
+.header--hidden {
   top: -200px;
 }
 
-.list {
+.header__nav {
   display: flex;
   position: relative;
   justify-content: space-around;
@@ -23,9 +25,11 @@
 
   margin-top: 2.4em;
   margin-bottom: 3em;
+
+  margin: 0 calc(10vw - 150px);
 }
 
-.list > * {
+.header__nav > * {
   flex: 1;
   display: flex;
   align-items: center;
@@ -33,11 +37,8 @@
   text-align: center;
 }
 
-.logo {
+.header__nav--logo {
   flex: 2;
+  width: 20em;
   margin: 0 calc(17vw - 200px);
-}
-
-nav {
-  margin: 0 calc(10vw - 150px);
 }

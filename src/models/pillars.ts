@@ -1,4 +1,4 @@
-interface pillarDTO {
+export interface pillarDTO {
   header: string;
   text: string;
 }

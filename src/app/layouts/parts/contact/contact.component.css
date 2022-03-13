@@ -1,0 +1,8 @@
+.split {
+  display: flex;
+  margin-top: 50px;
+}
+
+.left-side {
+  width: 50%;
+}

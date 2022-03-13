@@ -4,45 +4,76 @@
 
   background-color: #2c2c2c;
   min-width: 780px;
+
+  font-size: 1em;
 }
 
-.input,
-.input-text {
-  border: none;
-  font: normal normal normal 17px/21px Lato;
-  letter-spacing: 0px;
+.contact__input,
+.contact__input--text {
   color: #ffffff;
   opacity: 0.58;
 
+  border: none;
+
   padding-bottom: 4px;
 }
-.input1 {
-  margin-right: 40px;
-}
 
-.input {
+.contact__input {
   width: 300px;
+
+  font-size: 17px;
+  font-family: Lato;
+  line-height: 21px;
+
   margin-bottom: 40px;
   margin-top: 40px;
 
   background-color: #2c2c2c;
   border-bottom: 1px solid #ffffff;
-  opacity: 0.58;
 }
 
-.input-text {
-  resize: none;
+.contact__input--first {
+  margin-right: 40px;
+}
+
+.contact__textArea {
   width: 640px;
+  height: 100px;
+  position: relative;
+}
+
+.textArea__input {
+  width: 100%;
+  position: absolute;
+
   font-size: 17px;
+  font-family: Lato;
   line-height: 28px;
 
-  background-image: url(/assets/textarea-background.png);
-  background-repeat: repeat;
+  background-color: #2c2c2c;
+
+  border: none;
+  resize: none;
 
   margin-bottom: 40px;
 }
 
-.button {
+.textArea__background {
+  pointer-events: none;
+  width: 100%;
+  height: 28px;
+  position: absolute;
+
+  opacity: 0.58;
+}
+
+.textArea__background--line {
+  width: 100%;
+  height: 100%;
+  border-bottom: 1px solid #ffffff;
+}
+
+.contact__button {
   margin-top: 52px;
 
   width: 379px;
@@ -56,32 +87,34 @@
   text-transform: uppercase;
 }
 
-.button:hover {
+.contact__button:hover {
   cursor: pointer;
 }
 
-.button:disabled {
+.contact__button:disabled {
   opacity: 0.5;
 }
 
-.button:disabled:hover {
+.contact__button:disabled:hover {
   cursor: not-allowed;
 }
 
-.checkbox {
+.contact__checkbox {
   visibility: hidden;
 }
 
-.wrapper {
+.contact__checkbox-wrapper {
   display: flex;
   position: relative;
 }
 
-.wrapper .checkbox:checked + .checkbox-label:after {
+.contact__checkbox-wrapper
+  .contact__checkbox:checked
+  + .contact__checkbox--label:after {
   opacity: 1;
 }
 
-.wrapper .checkbox-label {
+.contact__checkbox-wrapper .contact__checkbox--label {
   background: none repeat scroll 0 0 #2c2c2c;
   border: 1px solid #fff;
   cursor: pointer;
@@ -94,7 +127,7 @@
   opacity: 0.5;
 }
 
-.wrapper .checkbox-label:after {
+.contact__checkbox-wrapper .contact__checkbox--label:after {
   border-style: none none solid solid;
   content: "";
   top: 7px;
@@ -107,7 +140,7 @@
   border-color: #fff;
 }
 
-.checkbox-text {
+.contact__checkbox--text {
   text-align: left;
   font: normal normal 600 13px Lato-light;
   letter-spacing: 0px;
@@ -115,67 +148,4 @@
 
   margin-left: 30px;
   margin-top: -2px;
-}
-
-@media (min-width: 1920px) {
-  .container {
-    width: calc(960 / 1920 * 100vw);
-    padding: calc(60 / 1920 * 100vw);
-    min-width: calc(780 / 1920 * 100vw);
-  }
-
-  .input,
-  .input-text {
-    font-size: calc(17 / 1920 * 100vw);
-    line-height: calc(21 / 1920 * 100vw);
-    padding-bottom: calc(4 / 1920 * 100vw);
-  }
-  .input1 {
-    margin-right: calc(40 / 1920 * 100vw);
-  }
-
-  .input {
-    width: calc(300 / 1920 * 100vw);
-    margin-bottom: calc(40 / 1920 * 100vw);
-    margin-top: calc(40 / 1920 * 100vw);
-    border-bottom: calc(1 / 1920 * 100vw) solid #ffffff;
-  }
-
-  .input-text {
-    width: calc(640 / 1920 * 100vw);
-    font-size: calc(17 / 1920 * 100vw);
-    line-height: calc(28 / 1920 * 100vw);
-
-    background-image: url(/assets/textarea-background.png);
-    background-repeat: repeat;
-    margin-bottom: calc(40 / 1920 * 100vw);
-  }
-
-  .button {
-    margin-top: calc(52 / 1920 * 100vw);
-    width: calc(379 / 1920 * 100vw);
-    height: calc(81 / 1920 * 100vw);
-    border: calc(1 / 1920 * 100vw) solid rgba(255, 255, 255, 0.48);
-    font-size: calc(44 / 1920 * 100vw);
-    color: rgba(255, 255, 255, 1);
-  }
-
-  .wrapper .checkbox-label {
-    border: calc(1 / 1920 * 100vw) solid #fff;
-    height: calc(28 / 1920 * 100vw);
-    width: calc(28 / 1920 * 100vw);
-  }
-
-  .wrapper .checkbox-label:after {
-    top: calc(7 / 1920 * 100vw);
-    left: calc(4 / 1920 * 100vw);
-    height: calc(8 / 1920 * 100vw);
-    width: calc(18 / 1920 * 100vw);
-  }
-
-  .checkbox-text {
-    font-size: calc(13 / 1920 * 100vw);
-    margin-left: calc(30 / 1920 * 100vw);
-    margin-top: calc(-2 / 1920 * 100vw);
-  }
 }

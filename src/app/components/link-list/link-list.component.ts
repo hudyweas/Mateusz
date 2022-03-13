@@ -8,6 +8,7 @@ import { fistViewTextRouter, routerDTO } from 'src/models/routers-link';
 })
 export class LinkListComponent implements OnInit {
   @Input() links: string = '';
+  @Input() class: string = '';
 
   ngOnInit(): void {
     this.setRouterLinks(this.links);

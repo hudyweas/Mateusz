@@ -1,40 +1,49 @@
 <div class="container">
-  <form [formGroup]="FormData" (ngSubmit)="onSubmit(FormData.value)">
-    <app-h3 class="header" [class]="'left notresponsive-70'">
+  <form [formGroup]="formData" (ngSubmit)="onSubmit(formData.value)">
+    <app-h appSize [size]="'h3'" [class]="'left notresponsive-70'">
       Masz do mnie pytania?
-    </app-h3>
+    </app-h>
 
     <div class="topic">
       <input
         type="text"
-        class="input input1"
+        class="contact__input contact__input--first"
         placeholder="Temat"
         formControlName="topic"
       />
       <input
         type="email"
-        class="input"
+        class="contact__input"
         placeholder="Adres e-mail"
         formControlName="email"
       />
     </div>
-    <textarea
-      class="input-text"
-      cols="30"
-      rows="3"
-      placeholder="Wpisz wiadomość"
-      formControlName="text"
-    ></textarea>
 
-    <div class="wrapper">
+    <div class="contact__textArea">
+      <textarea
+        class="textArea__input"
+        cols="30"
+        rows="3"
+        placeholder="Wpisz wiadomość"
+        formControlName="text"
+      ></textarea>
+      <div class="textArea__background">
+        <div
+          *ngFor="let i of [0, 1, 2]"
+          class="textArea__background--line"
+        ></div>
+      </div>
+    </div>
+
+    <div class="contact__checkbox-wrapper">
       <input
         type="checkbox"
-        class="checkbox"
+        class="contact__checkbox"
         id="checkbox"
         formControlName="checked"
       />
-      <label class="checkbox-label" for="checkbox"></label>
-      <div class="checkbox-text">
+      <label class="contact__checkbox--label" for="checkbox"></label>
+      <div class="contact__checkbox--text">
         Wyrażam zgodę na przetwarzanie moich danych osobowych przez
         administratora danych <br />
         IFilmYou oraz akceptuję ogólne warunki użytkowania i politykę
@@ -43,9 +52,9 @@
     </div>
 
     <input
-      class="button"
+      class="contact__button"
       type="submit"
-      [disabled]="!FormData.valid"
+      [disabled]="!formData.valid"
       value="Wyślij wiadomość"
     />
   </form>

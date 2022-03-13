@@ -1,7 +1,20 @@
+interface videoDTO {
+  header: string;
+  content: string;
+}
+
 export interface sliderDTO {
   header: string;
   content: string;
-  bonus?: string;
+  bonus: string;
+}
+
+export interface verticalSliderDTO {
+  header: string;
+  content: string;
+  before: videoDTO;
+  after: videoDTO;
+  video: string;
 }
 
 export const textSlider: sliderDTO[] = [
@@ -31,7 +44,7 @@ export const textSlider: sliderDTO[] = [
   },
 ];
 
-export const verticalMovieSlider = [
+export const verticalMovieSlider: verticalSliderDTO[] = [
   {
     header: 'Bogumiła & Alek',
     content: '12.01.2021',

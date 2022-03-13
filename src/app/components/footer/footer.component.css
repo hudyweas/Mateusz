@@ -1,31 +1,32 @@
 .container {
-  font-size: max(1em, 10px);
+  font-size: max(calc(10 / 1920 * 100vw), 7px);
 }
 
-.text-container {
+.footer__container {
   display: flex;
   margin-bottom: 13em;
 }
 
-.text-container > * {
+.footer__container > * {
   flex-grow: 1;
 }
 
 .logo,
-.text-container {
+.company__info {
   margin-left: 5%;
   margin-right: 5%;
 }
 
 .logo {
+  width: 24em;
   margin-bottom: 4em;
 }
 
-.text-area {
+.company__info {
   width: 36em;
 }
 
-.text {
+.company__info--text {
   font-size: 1.5em;
   font-family: Lato-light;
   letter-spacing: 0px;
@@ -34,7 +35,13 @@
   max-width: 30em;
 }
 
-.link-header {
+.company__item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.company__item--header {
   font-size: 2em;
   font-family: Hello Branch;
   letter-spacing: 0px;
@@ -42,21 +49,15 @@
   opacity: 1;
 }
 
-.link {
+.item__links {
+  display: flex;
+  flex-direction: column;
+}
+
+.item__links--link {
   font-size: 1.5em;
   font-family: Lato-light;
   letter-spacing: 0px;
   color: #ffffff;
   opacity: 1;
-}
-
-.item {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.link-group {
-  display: flex;
-  flex-direction: column;
 }

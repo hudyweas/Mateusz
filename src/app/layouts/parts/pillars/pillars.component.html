@@ -1,0 +1,28 @@
+<div class="container">
+  <app-p class="container__top" [class]="'responsive-20 uppercase'">
+    WANT TRULY AUTHENTIC FILM?
+  </app-p>
+  <app-h appSize [size]="'h1'" class="container__header"
+    >Lorem ipsum lorem</app-h
+  >
+
+  <div class="container__pillars">
+    <div class="pillars__wrapper">
+      <app-img
+        *ngFor="let p of pillarList; let i = index"
+        class="pillars__pillar"
+        [src]="'pillar' + i + '.png'"
+      ></app-img>
+    </div>
+
+    <div class="container__text">
+      <div *ngFor="let p of pillarList; let i = index" class="text__wrapper">
+        <span class="text__number">{{ "0" + (i + 1) }}</span>
+        <app-h appSize [size]="'h2'" [class]="'left darkGrey'">{{
+          p.header
+        }}</app-h>
+        <app-p [class]="'darkGrey responsive-20'">{{ p.text }}</app-p>
+      </div>
+    </div>
+  </div>
+</div>

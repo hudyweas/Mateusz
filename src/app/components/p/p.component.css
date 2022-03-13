@@ -1,5 +1,6 @@
 .style {
-  font: normal normal 300 2em Lato-light;
+  font: 300 2em Lato-light;
+  line-height: 1.5em;
   letter-spacing: 0px;
   color: #ffffff;
   opacity: 1;

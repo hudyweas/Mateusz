@@ -1,0 +1,47 @@
+.container {
+  width: 100%;
+
+  font-size: max(calc(10 / 1920 * 100vw), 7px);
+}
+
+.firstViewBox {
+  margin-top: 15%;
+  margin-bottom: 50em;
+}
+
+.firstViewBox-text {
+  text-align: center;
+  font-size: 16em;
+  font-family: Hello Branch;
+  color: #ffffff;
+}
+
+.firstViewBox > .linkBox {
+  margin: 0 auto;
+  width: 70em;
+}
+
+.margin {
+  margin-bottom: 27em;
+}
+
+.background {
+  background-image: url("/assets/mainPageBackground.png");
+
+  background-image: linear-gradient(
+      0deg,
+      rgb(39, 39, 39) 0%,
+      rgba(255, 255, 255, 0) 20%
+    ),
+    url("/assets/mainPageBackground.png");
+  background-repeat: no-repeat;
+  opacity: 1;
+  width: 100%;
+  height: 120%;
+  z-index: -100;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -100;
+  background-size: 100%;
+}

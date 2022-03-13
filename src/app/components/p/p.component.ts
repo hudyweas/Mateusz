@@ -6,5 +6,5 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./p.component.css'],
 })
 export class PComponent {
-  @Input() class? = '';
+  @Input() class?: string = '';
 }

@@ -1,4 +1,5 @@
 <div class="container">
+  <!-- Pominac - Aga sie musi zastanowic -->
   <div
     class="slider"
     #slider
@@ -8,10 +9,10 @@
   >
     <div
       *ngFor="let s of videoData; let i = index"
-      class="video-wrapper"
+      class="slider__wrapper"
       #element
     >
-      <div class="video">
+      <div class="slider__video">
         <iframe
           class="movie"
           [src]="s.src | safe"
@@ -20,17 +21,23 @@
           allow="autoplay"
           allowfullscreen
         ></iframe>
-        <app-h1 class="names" [class]="'darkGrey'">{{ s.names }}</app-h1>
+        <app-h
+          appSize
+          [size]="'h1'"
+          class="slider__names"
+          [class]="'darkGrey'"
+          >{{ s.names }}</app-h
+        >
       </div>
-      <app-h3 class="responsive-70">{{ s.where }}</app-h3>
+      <app-h appSize [size]="'h3'" class="responsive-70">{{ s.where }}</app-h>
       <app-p class="uppercase half-opacity center responsive-16">{{
         s.place
       }}</app-p>
-      <div class="margin-bottom"></div>
-      <div class="white-line-vertical"></div>
+      <div class="slider__positioner--space"></div>
+      <div class="slider__positioner--line"></div>
     </div>
   </div>
 
-  <div class="previous" (click)="goPrevious()"></div>
-  <div class="next" (click)="goNext()"></div>
+  <div class="slider__previous" (click)="goPrevious()"></div>
+  <div class="slider__next" (click)="goNext()"></div>
 </div>

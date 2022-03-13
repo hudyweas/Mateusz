@@ -1,18 +1,21 @@
 <div class="container">
   <div
-    class="inner"
+    class="slider"
     *ngFor="let s of sliderData; let i = index"
-    [class]="'class' + i"
+    [class]="'slider--item' + i"
   >
-    <p class="header">{{ s.header }}</p>
+    <p class="slider__header">{{ s.header }}</p>
 
-    <div class="item">{{ s.content }}</div>
+    <div class="slider__text">{{ s.content }}</div>
 
-    <p class="signature">{{ s.bonus }}</p>
+    <p class="slider__signature">{{ s.bonus }}</p>
   </div>
 
-  <div class="dots">
-    <span class="dot dot0"></span><span class="dot dot1"></span
-    ><span class="dot dot2"></span><span class="dot dot3"></span>
+  <div class="slider__dots--container">
+    <span
+      *ngFor="let i of [0, 1, 2, 3]"
+      class="dots__dot"
+      [class]="'dots__dot--item' + i"
+    ></span>
   </div>
 </div>

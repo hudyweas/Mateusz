@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { MainPageComponent } from './layouts/main-page/main-page.component';
+import { MainPageComponent } from './layouts/pages/main-page/main-page.component';
 import { RouterModule, Routes } from '@angular/router';
-import { OfferPageComponent } from './layouts/offer-page/offer-page.component';
-import { VideoPageComponent } from './layouts/video-page/video-page.component';
+import { OfferPageComponent } from './layouts/pages/offer-page/offer-page.component';
+import { VideoPageComponent } from './layouts/pages/video-page/video-page.component';
 
 const routes: Routes = [
   {
@@ -11,11 +11,11 @@ const routes: Routes = [
   },
 
   {
-    path: 'oferta',
+    path: 'offer',
     component: OfferPageComponent,
   },
   {
-    path: 'filmy',
+    path: 'movies',
     component: VideoPageComponent,
   },
 ];

@@ -1,3 +1,5 @@
+// pominac
+
 import {
   AfterViewInit,
   Component,
@@ -17,17 +19,14 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./horizontal-scrolling-slider.component.css'],
 })
 export class HorizontalScrollingSliderComponent implements AfterViewInit {
-  sanitizer;
+  public videoData: movieInterface[];
+  public index: number = 1;
 
-  videoData: movieInterface[];
-  index: number = 1;
-
-  noSliders: any;
+  private noSliders: number = 0;
 
   @ViewChild('slider') slider: any;
 
-  constructor(sanitizer: DomSanitizer) {
-    this.sanitizer = sanitizer;
+  constructor() {
     this.videoData = moviePage;
   }
   ngAfterViewInit(): void {

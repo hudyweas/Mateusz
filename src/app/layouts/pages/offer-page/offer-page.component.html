@@ -1,0 +1,58 @@
+<div class="wrapper">
+  <div class="background">Oferta</div>
+
+  <app-header class="menu"></app-header>
+
+  <div class="offer__container offer__container--first">
+    <div
+      *ngFor="let offer of offers; let i = index"
+      class="offer__container--positioner"
+      [class.container__positioner--middle]="i == 1 ? true : false"
+    >
+      <div class="offer__content">
+        <div class="offer__content--header">{{ offer.header }}</div>
+        <app-list [list]="offer.package"></app-list>
+        <div class="offer__content--price">{{ offer.price }}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="offer__line--middle"></div>
+
+  <div class="offer__container offer__container--second">
+    <div class="offer__container--positioner">
+      <div class="positioner__option">
+        <div class="positioner__option--header">
+          {{ additionalOptions.header }}
+        </div>
+        <app-list
+          [list]="additionalOptions.package"
+          [class]="'informations'"
+        ></app-list>
+      </div>
+    </div>
+
+    <div>
+      <div class="offer__button--positioner">
+        <div class="offer__button">
+          <a class="offer__button--text" href="#">Zarezerwuj termin</a>
+        </div>
+        <div class="offer__button--line"></div>
+      </div>
+    </div>
+
+    <div class="positioner">
+      <div class="positioner__option">
+        <div class="positioner__option--header">
+          {{ additionalInformations.header }}
+        </div>
+        <app-list
+          [list]="additionalInformations.package"
+          [class]="'informations'"
+        ></app-list>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>
