@@ -1,3 +1,8 @@
+.wrapper {
+  width: 100vw;
+  height: 100vh;
+}
+
 .background {
   text-align: center;
   font: normal normal normal calc(330 / 1920 * 100vw) Hello Branch;
