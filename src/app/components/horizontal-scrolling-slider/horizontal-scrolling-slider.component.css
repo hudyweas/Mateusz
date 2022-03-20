@@ -60,12 +60,8 @@
   z-index: 100;
   width: calc((100vw - 92em) / 2 - 100px);
   height: 500px;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 
-<<<<<<< Updated upstream
-.slider__previous {
-=======
 .previous {
   background: rgb(39, 39, 39);
   background: linear-gradient(
@@ -85,7 +81,6 @@
 }
 
 .previous {
->>>>>>> Stashed changes
   left: 0;
   top: 0;
 }
