@@ -9,6 +9,7 @@ import { OfferPageComponent } from './layouts/pages/offer-page/offer-page.compon
 import { MailContactService } from './services/mail-contact.service';
 import { VideoPageComponent } from './layouts/pages/video-page/video-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { PathLocationStrategy, LocationStrategy } from '@angular/common';
 
 const viewPages = [MainPageComponent, OfferPageComponent, VideoPageComponent];
 
@@ -22,7 +23,10 @@ const viewPages = [MainPageComponent, OfferPageComponent, VideoPageComponent];
     HttpClientModule,
   ],
   exports: [viewPages],
-  providers: [MailContactService],
+  providers: [
+    MailContactService,
+    { provide: LocationStrategy, useClass: PathLocationStrategy },
+  ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
